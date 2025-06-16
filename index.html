@@ -91,7 +91,7 @@
 	  background-color: #333;
 	  border-radius: 4px;
 	  transition: background-color 0.15s;
-	  border: 2px solid white; /* 新增白色邊框 */
+	  border: 2px solid white; /* 白色邊框 */
 	}
 
 
@@ -155,7 +155,7 @@
 
   <div class="game" id="game">
     <div class="score" id="score">分數：0</div>
-    <div class="high-score" id="highScore">最高分：0</div>
+    <div class="high-score" id="highScore">歷史最高分：0</div>
     <div class="game-over" id="gameOver">遊戲結束</div>
     <button class="restart-btn" id="restartBtn">重新開始</button>
     <div class="dino" id="dino"></div>
@@ -268,7 +268,7 @@
       const highScore = parseInt(localStorage.getItem("highScore") || "0");
       if (score > highScore) {
         localStorage.setItem("highScore", score);
-        highScoreDisplay.innerText = "最高分：" + score;
+        highScoreDisplay.innerText = "歷史最高分：" + score;
       }
     }
 
@@ -285,7 +285,7 @@
     }
 
     // 初始化最高分顯示
-    highScoreDisplay.innerText = "最高分：" + (localStorage.getItem("highScore") || "0");
+    highScoreDisplay.innerText = "歷史最高分：" + (localStorage.getItem("highScore") || "0");
 
     document.addEventListener("keydown", function(event) {
       if (event.code === "Space") {
